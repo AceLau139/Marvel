@@ -1,0 +1,678 @@
+/*-------------- GENERAL SETTING ------------------------------- */
+
+:root {
+  /* CARD INFO */
+  --card-number: 6;
+  --card-width: 200px;
+  --card-height: 300px;
+  --card-gap: (70vw - (var(--card-number) * var(--card-width))) /
+    (var(--card-number) - 1);
+
+  /* CARD TRANSFORM */
+  --translateY: -35vh;
+  /* --translateY: -35rem; */
+  /* --translateX: 5rem; */
+  --translateX: 10vw;
+  --card-flyout: perspective(1200px) rotateX(20deg) rotateY(560deg)
+    rotateZ(20deg) scale(1.5);
+
+  /* CARD EFFECT */
+  --shadow-normal: 0 0 3rem rgba(0, 0, 0, 0.5);
+
+  /* BREAK POINT */
+  --bp-mobile: 24.5em;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  display: none;
+}
+
+/*-------------- HEADER SETTING ------------------------------- */
+
+.header {
+  width: 100vw;
+  background-color: rgba(0, 0, 0);
+  position: sticky;
+  top:0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.header .logo {
+  width: 12rem;
+}
+
+#Mavrel_logo{
+  width: 100px;
+}
+
+.meun-control {
+  display: block;
+  height: 3px;
+  width: 40px;
+
+  background-color: #3a3a3a;
+
+  position: relative;
+  z-index: 200;
+}
+
+.meun-control:before,
+.meun-control:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  position: absolute;
+  left: 0;
+}
+
+.meun-control:before {
+  top: 1rem;
+}
+
+.meun-control:after {
+  top: -1rem;
+}
+
+.nav__list {
+  position: absolute;
+  right: 2rem;
+
+  /* -2rem(header padding) -3px(line height) -2rem(header margin bottom)  */
+  bottom: calc(-100% - 2rem - 3px - 2rem - 8rem);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding-block: 1rem;
+
+  /* becoz of bootstrap setting */
+  padding-left: 0;
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
+#meun:checked ~ .nav__list {
+  bottom: calc(-100% - 2rem - 3px - 2rem - 15rem);
+  opacity: 1;
+}
+
+.nav__item {
+  padding: 1rem 2rem;
+
+  font-size: 2rem;
+  text-align: center;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.nav__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: white;
+}
+
+@media only screen and (min-width: 24.5em) {
+  .header-container {
+    max-width: 150rem;
+    height: 10rem;
+    margin: auto;
+    padding-block: 1rem;
+    padding: 2rem;
+  }
+
+  .header .logo {
+    width: 100px;
+  }
+
+  #Mavrel_logo{
+    width: 150px;
+  }
+  
+  .meun-control {
+    display: none;
+  }
+
+  .nav__list {
+    position: relative;
+    right: 0;
+
+    /* becoz of the bootstrap setting */
+    margin-bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+/*-------------- CHARACTER SECTION ------------------------------- */
+
+.section--character {
+  width: 100vw;
+  height: 100vh;
+}
+
+.character-group {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 100;
+
+  display: flex;
+  gap: 5rem;
+
+  width: 100%;
+  padding: calc((100vw - var(--card-width)) / 2);
+
+  translate: 0 -75%;
+  overflow-y: scroll;
+}
+
+.character {
+  width: var(--card-width);
+  height: var(--card-height);
+
+  background-size: cover;
+  background-position: center;
+
+  position: relative;
+  flex-shrink: 0;
+
+  border: 7px solid white;
+
+  cursor: pointer;
+  box-shadow: var(--shadow-normal);
+
+  transform-style: preserve-3d;
+  transition: 0.75s;
+  /* transition: translate 3s ease-in-out, rotate 3s, scale 0.3s, transform 3s; */
+}
+
+.character-front {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+  background-size: cover;
+  background-position: center;
+  transition: 3s;
+}
+
+.character--ironman {
+  background-image: url(./images/ironman.jpg);
+}
+
+.character--captain {
+  background-image: url(./images/captain.jpg);
+}
+
+.character--widow {
+  background-image: url(./images/black-widow.jpg);
+}
+
+.character--thor {
+  background-image: url(./images/thor.jpg);
+}
+
+.character--hulk {
+  background-image: url(./images/hulk.jpg);
+}
+
+.character--hawkeye {
+  background-image: url(./images/hawkeye.jpg);
+}
+
+.character-front {
+  /* z-index: 100; */
+  background-image: url(./images/Marvel-card-cover.jpg);
+}
+
+#ironman:checked ~ .character-group .character--ironman,
+#captain:checked ~ .character-group .character--captain,
+#widow:checked ~ .character-group .character--widow,
+#thor:checked ~ .character-group .character--thor,
+#hulk:checked ~ .character-group .character--hulk,
+#hawkeye:checked ~ .character-group .character--hawkeye {
+  transform: perspective(1200px) rotateY(180deg) scale(1.3);
+}
+
+#ironman:checked ~ .bg-video-group .bg-video-ironman,
+#captain:checked ~ .bg-video-group .bg-video-captain,
+#widow:checked ~ .bg-video-group .bg-video-widow,
+#thor:checked ~ .bg-video-group .bg-video-thor,
+#hulk:checked ~ .bg-video-group .bg-video-hulk,
+#hawkeye:checked ~ .bg-video-group .bg-video-hawkeye {
+  opacity: 0.2;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  z-index: -100;
+  pointer-events: none;
+  transition: 1s;
+}
+
+.info-group {
+  text-align: center;
+  user-select: none;
+  margin: auto;
+}
+
+.info--character {
+  position: absolute;
+  left: 3rem;
+  right: 3rem;
+  bottom: 7vh;
+
+  opacity: 0;
+  transition: opacity 0.2s 0.5s;
+}
+
+.info__title {
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+
+.info__description {
+  font-size: 1.6rem;
+}
+
+#ironman:checked ~ .info-group .info--ironman,
+#captain:checked ~ .info-group .info--captain,
+#widow:checked ~ .info-group .info--widow,
+#thor:checked ~ .info-group .info--thor,
+#hulk:checked ~ .info-group .info--hulk,
+#hawkeye:checked ~ .info-group .info--hawkeye {
+  opacity: 1;
+}
+
+@media only screen and (min-width: 24.5em) {
+  .section--character {
+    position: relative;
+  }
+
+  .character-group {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 900;
+
+    gap: 0;
+
+    width: 70%;
+    padding: 0;
+
+    translate: 0 -100%;
+    overflow-y: visible;
+  }
+
+  .character {
+    background-size: cover;
+    background-position: center;
+
+    position: relative;
+    flex-shrink: 0;
+
+    border: 7px solid white;
+
+    cursor: pointer;
+    box-shadow: var(--shadow-normal);
+
+    transform-style: preserve-3d;
+    transition: translate 3s ease-in-out, rotate 3s, scale 0.3s, transform 3s;
+  }
+
+  .character:not(:last-child) {
+    margin-right: calc(var(--card-gap));
+  }
+
+  .character-front {
+    background-image: url(./images/Marvel-card-cover.jpg);
+  }
+
+  #ironman:checked ~ .character-group .character--ironman,
+  #captain:checked ~ .character-group .character--captain,
+  #widow:checked ~ .character-group .character--widow,
+  #thor:checked ~ .character-group .character--thor,
+  #hulk:checked ~ .character-group .character--hulk,
+  #hawkeye:checked ~ .character-group .character--hawkeye {
+    transform: var(--card-flyout);
+    z-index: 100;
+  }
+
+  #ironman:checked ~ .character-group .character--ironman {
+    translate: var(--translateX) var(--translateY);
+  }
+
+  #captain:checked ~ .character-group .character--captain {
+    translate: calc(-0px - (var(--card-gap) * 0) - (var(--card-width) * 0))
+      var(--translateY);
+  }
+
+  #widow:checked ~ .character-group .character--widow {
+    translate: calc(-0px - (var(--card-gap) * 1) - (var(--card-width) * 1))
+      var(--translateY);
+  }
+
+  #thor:checked ~ .character-group .character--thor {
+    translate: calc(-0px - (var(--card-gap) * 2) - (var(--card-width) * 2))
+      var(--translateY);
+  }
+
+  #hulk:checked ~ .character-group .character--hulk {
+    translate: calc(-0px - (var(--card-gap) * 3) - (var(--card-width) * 3))
+      var(--translateY);
+  }
+
+  #hawkeye:checked ~ .character-group .character--hawkeye {
+    /* prettier-ignore */
+    translate: calc(-0px - (var(--card-gap) * 4) - (var(--card-width) * 4)) var(--translateY);
+  }
+
+  .info-group {
+    width: 35vw;
+    height: 30rem;
+
+    position: absolute;
+    top: 50%;
+    right: 15vw;
+    user-select: none;
+
+    margin: 0;
+
+    text-align: left;
+
+    translate: 0 -80%;
+  }
+}
+
+/*-------------- GALLERY SECTION ------------------------------- */
+
+.gallery-mobile-container {
+  width: 100%;
+  height: 100vh;
+  /* padding: 20rem 3rem; */
+  background-image: url(./images/wallpaper.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+#carouselExampleFade {
+  width: calc(100% - 6rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.carousel-inner>.carousel-item>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.gallery-container {
+  display: none;
+
+  width: 100%;
+  height: 100%;
+  background-image: url(./images/wallpaper.jpg);
+  background-size: cover;
+
+  /* display: grid; */
+  place-items: center;
+
+  padding-block: 20rem;
+
+  position: relative;
+}
+
+/* for bluring the background image */
+.overlay {
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(10px);
+}
+
+.gallery {
+  width: 80%;
+  height: 650px;
+
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+
+  position: relative;
+  z-index: 200;
+}
+
+/* placing image to the right place */
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.gallery__item img:active {
+  scale: 1.2;
+}
+
+.gallery__item img:hover{
+  transform: scale(1.3, 1.3);
+}
+
+.gallery__item1 {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 2;
+  background-image: url(./images/gallery/gallery1.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: 300ms;
+}
+
+.gallery__item1:hover {
+  background-image: url(./images/gallery/gallery1.gif);
+  transform: scale(1.3, 1.3);
+}
+
+.gallery__item2 {
+  grid-column: 4 / span 2;
+  grid-row: 1 / span 4;
+  background-image: url(./images/gallery/gallery2a.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: 300ms;
+}
+
+.gallery__item2:hover {
+  background-image: url(./images/gallery/gallery2b.jpg);
+  transform: scale(1.3, 1.3);
+}
+
+.gallery__item3 {
+  grid-column: 6 / span 2;
+  grid-row: 1 / span 1;
+}
+
+.gallery__item4 {
+  grid-column: 1 / span 3;
+  grid-row: 3 / span 2;
+}
+
+.gallery__item5 {
+  grid-column: 6 / span 2;
+  grid-row: 2 / span 2;
+}
+
+.gallery__item6 {
+  grid-column: 6 / span 1;
+  grid-row: 4 / span 1;
+}
+
+.gallery__item7 {
+  grid-column: 7 / span 1;
+  grid-row: 4 / span 3;
+}
+
+.gallery__item8 {
+  grid-column: 1 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.gallery__item9 {
+  grid-column: 2 / span 2;
+  grid-row: 5 / span 2;
+}
+
+.gallery__item10 {
+  grid-column: 4 / span 1;
+  grid-row: 5 / span 2;
+}
+
+.gallery__item11 {
+  grid-column: 5 / span 2;
+  grid-row: 5 / span 2;
+}
+
+@media only screen and (min-width: 24.5em) {
+  .gallery-mobile-container {
+    display: none;
+  }
+
+  .gallery-container {
+    display: grid;
+    width: 100vw;
+  }
+}
+
+/*-------------- Trailer SECTION ------------------------------- */
+.section--trailer {
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(#ffb8c1, #e0e970);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.tv {
+  width: 100%;
+  position: relative;
+}
+
+.tv-png {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.trailer {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  translate: -50% -50%;
+
+  width: 53%;
+  height: 75%;
+  object-fit: cover;
+}
+
+@media only screen and (min-width: 24.5em) {
+  .tv {
+    width: 60vw;
+    top: 5rem;
+  }
+}
+
+/*-------------- FOOTER SECTION ------------------------------- */
+
+.footer {
+  height: 30vh;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+
+  position: relative;
+}
+
+.social-media-group {
+  display: flex;
+  gap: 3rem;
+}
+
+i {
+  font-size: 4.5rem;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.copyright {
+  position: absolute;
+  bottom: 2rem;
+
+  text-align: center;
+  color: #777;
+}
+
+@media only screen and (hover: hover) {
+  .nav__item:hover {
+    scale: 1.2;
+  }
+
+  i:hover {
+    translate: 0 -1rem;
+    color: red;
+  }
+}

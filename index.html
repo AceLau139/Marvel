@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marvel</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/ea4456f54e.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!---------------------- HEADER ------------------------>
+    <header class="header">
+      <div class="header-container">
+        <div class="logo">
+          <img src="./images/Marvel_logo.svg" alt="logo" id='Mavrel_logo' />
+        </div>
+
+        <nav class="nav">
+          <input type="checkbox" id="meun" />
+          <label for="meun" class="meun-control"></label>
+
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#section--character" class="nav__link">Character</a>
+            </li>
+            <li class="nav__item">
+              <a href="#section--gallery" class="nav__link">Gallery</a>
+            </li>
+            <li class="nav__item">
+              <a href="#section--video" class="nav__link">Trailer</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!---------------------- SECTION CHARACTER ------------------------>
+    <section class="section--character" id="section--character">
+      <input type="radio" name="card" id="ironman" />
+      <input type="radio" name="card" id="captain" />
+      <input type="radio" name="card" id="widow" />
+      <input type="radio" name="card" id="thor" />
+      <input type="radio" name="card" id="hulk" />
+      <input type="radio" name="card" id="hawkeye" />
+
+      <div class="character-group">
+        <label for="ironman" class="character character--ironman">
+          <div class="character-front"></div>
+        </label>
+        <label for="captain" class="character character--captain">
+          <div class="character-front"></div>
+        </label>
+        <label for="widow" class="character character--widow">
+          <div class="character-front"></div>
+        </label>
+        <label for="thor" class="character character--thor">
+          <div class="character-front"></div>
+        </label>
+        <label for="hulk" class="character character--hulk">
+          <div class="character-front"></div>
+        </label>
+        <label for="hawkeye" class="character character--hawkeye">
+          <div class="character-front"></div>
+        </label>
+      </div>
+
+      <div class="info-group">
+        <div class="info--character info--ironman">
+          <h2 class="info__title">Ironman</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+        <div class="info--character info--captain">
+          <h2 class="info__title">Captain America</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+        <div class="info--character info--widow">
+          <h2 class="info__title">Black Widow</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+        <div class="info--character info--thor">
+          <h2 class="info__title">Thor</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+        <div class="info--character info--hulk">
+          <h2 class="info__title">Hulk</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+        <div class="info--character info--hawkeye">
+          <h2 class="info__title">Hawkeye</h2>
+          <p class="info__description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+            asperiores. Lorem ipsum dolor, sit amet consectetur adipisicing
+            elit. Facere dolorum accusamus aspernatur ex culpa praesentium neque
+            autem excepturi ipsum dolorem.
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-video-group">
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/zHdL_jvgPu0?start=50&autoplay=1&mute=1&playlist=zHdL_jvgPu0&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-ironman"
+        ></iframe>
+
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/DFMY99NXOgc?controls=0&autoplay=1&mute=1&playlist=DFMY99NXOgc&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-captain"
+        ></iframe>
+
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/cJ-mldWvHwg?controls=0&autoplay=1&mute=1&playlist=cJ-mldWvHwg&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-widow"
+        ></iframe>
+
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/DXt-PSu94nA?controls=0&autoplay=1&mute=1&playlist=DXt-PSu94nA&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-thor"
+        ></iframe>
+
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/SLD9xzJ4oeU?controls=0&autoplay=1&mute=1&playlist=SLD9xzJ4oeU&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-hulk"
+        ></iframe>
+
+        <iframe 
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/IZC9AhvuUko?controls=0&autoplay=1&mute=1&playlist=IZC9AhvuUko&loop=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        class="bg-video bg-video-hawkeye"
+        ></iframe>
+
+      </div>
+    </section>
+
+    <!---------------------- SECTION GALLERY ------------------------>
+    <section class="section--gallery" id="section--gallery">
+      <div class="gallery-mobile-container">
+        <div class="overlay"></div>
+        <div 
+          id="carouselExampleFade" 
+          class="carousel slide carousel-fade" 
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="./images/gallery/gallery1.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery1.gif" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery3.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery4.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery5.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery6.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery8.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery9.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery10.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="./images/gallery/gallery11.png" class="d-block w-100" alt="...">
+            </div>
+          </div>
+
+          <button 
+            class="carousel-control-prev" 
+            type="button" 
+            data-bs-target="#carouselExampleFade" 
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button 
+            class="carousel-control-next" 
+            type="button" 
+            data-bs-target="#carouselExampleFade" 
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="gallery-container">
+        <div class="overlay"></div>
+        <div class="gallery">
+          <div class="gallery__item gallery__item1">
+          </div>
+          <div class="gallery__item gallery__item2">
+          </div>
+          <div class="gallery__item gallery__item3">
+            <img src="./images/gallery/gallery3.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item4">
+            <img src="./images/gallery/gallery4.png" alt="" />
+          </div>
+          <div class="gallery__item gallery__item5">
+             <img src="./images/gallery/gallery5.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item6">
+            <img src="./images/gallery/gallery6.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item7">
+            <img src="./images/gallery/gallery7.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item8">
+            <img src="./images/gallery/gallery8.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item9">
+            <img src="./images/gallery/gallery9.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item10">
+            <img src="./images/gallery/gallery10.jpg" alt="" />
+          </div>
+          <div class="gallery__item gallery__item11">
+            <img src="./images/gallery/gallery11.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!---------------------- SECTION TRAILER ------------------------>
+    <section class="section--trailer" id="section--video">
+      <div class="tv">
+        <img src="./images/tv.png" alt="" class="tv-png" />
+        <iframe class="trailer"
+        width="560" 
+        height="315" 
+        src="https://www.youtube.com/embed/hIR8Ar-Z4hw" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <!---------------------- FOOTER ------------------------>
+    <footer class="footer">
+      <div class="social-media-group">
+        <a href="#" class="link--fb"><i class="fab fa-facebook-square"></i></a>
+        <a href="#" class="link--ig"><i class="fab fa-instagram"></i></a>
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <p class="copyright">
+        Copyright &copy; 2022 by Ace, Adela, Cecilia, Morris and Joe.
+      </p>
+    </footer>
+  </body>
+</html>
