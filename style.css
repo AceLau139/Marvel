@@ -140,7 +140,7 @@ input {
   color: white;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 1024px) {
   .header-container {
     max-width: 150rem;
     height: 10rem;
@@ -324,7 +324,7 @@ input {
   opacity: 1;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 1024px) {
   .section--character {
     position: relative;
   }
@@ -574,7 +574,7 @@ input {
   grid-row: 6 / span 3;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 1024px) {
   .gallery-mobile-container {
     display: none;
   }
@@ -620,7 +620,7 @@ input {
   object-fit: cover;
 }
 
-@media only screen and (min-width: 320px) {
+@media only screen and (min-width: 1024px) {
   .tv {
     width: 60vw;
     top: 5rem;
