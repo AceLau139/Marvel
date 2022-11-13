@@ -131,10 +131,6 @@ input {
   transition: 0.2s;
 }
 
-.nav__item:not(:last-child) {
-  margin-bottom: 1rem;
-}
-
 .nav__link {
   text-decoration: none;
   color: white;
@@ -187,7 +183,7 @@ input {
 
 .character-group {
   position: absolute;
-  top: 50%;
+  top: 72%;
   left: 0;
   z-index: 100;
 
@@ -307,7 +303,7 @@ input {
 }
 
 .info__title {
-  font-size: 5rem;
+  font-size: 4.5rem;
   margin-bottom: 2rem;
 }
 
@@ -405,8 +401,8 @@ input {
   }
 
   #hawkeye:checked ~ .character-group .character--hawkeye {
-    /* prettier-ignore */
-    translate: calc(-0px - (var(--card-gap) * 4) - (var(--card-width) * 4)) var(--translateY);
+    translate: calc(-0px - (var(--card-gap) * 4) - (var(--card-width) * 4)) 
+      var(--translateY);
   }
 
   .info-group {
