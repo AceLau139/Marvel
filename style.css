@@ -331,7 +331,7 @@ input {
     left: 0;
     right: 0;
     margin: auto;
-    z-index: 900;
+    z-index: 1100;
 
     gap: 0;
 
