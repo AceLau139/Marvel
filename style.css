@@ -183,7 +183,7 @@ input {
 
 .character-group {
   position: absolute;
-  top: 72%;
+  top: 60%;
   left: 0;
   z-index: 100;
 
@@ -287,28 +287,31 @@ input {
 }
 
 .info-group {
-  text-align: center;
   user-select: none;
   margin: auto;
+}
+
+.info__title{
+  text-align: center;
 }
 
 .info--character {
   position: absolute;
   left: 3rem;
   right: 3rem;
-  bottom: 7vh;
+  bottom: 0rem;
 
   opacity: 0;
   transition: opacity 0.2s 0.5s;
 }
 
 .info__title {
-  font-size: 4.5rem;
+  font-size: 4rem;
   margin-bottom: 2rem;
 }
 
 .info__description {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 #ironman:checked ~ .info-group .info--ironman,
@@ -327,11 +330,11 @@ input {
 
   .character-group {
     position: absolute;
-    top: 100%;
+    top: 90%;
     left: 0;
     right: 0;
     margin: auto;
-    z-index: 1100;
+    z-index: 100;
 
     gap: 0;
 
@@ -410,7 +413,7 @@ input {
     height: 30rem;
 
     position: absolute;
-    top: 50%;
+    top: 40%;
     right: 15vw;
     user-select: none;
 
@@ -419,6 +422,25 @@ input {
     text-align: left;
 
     translate: 0 -80%;
+  }
+
+  .info--character {
+    position: absolute;
+    left: 3rem;
+    right: 3rem;
+    top: 3rem;
+  
+    opacity: 0;
+    transition: opacity 0.2s 0.5s;
+  }
+
+  .info__title {
+    font-size: 4.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .info__description {
+    font-size: 1.6rem;
   }
 }
 
@@ -626,14 +648,13 @@ input {
 /*-------------- FOOTER SECTION ------------------------------- */
 
 .footer {
-  height: 30vh;
+  height: 25vh;
   background-color: black;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 
   position: relative;
 }
