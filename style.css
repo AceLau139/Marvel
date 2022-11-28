@@ -652,6 +652,7 @@ input {
   }
 
   .tv-png {
+    display: block;
     width: 100%;
     position: relative;
     z-index: 100;
